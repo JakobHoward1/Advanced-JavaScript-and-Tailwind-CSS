@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="script.js" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Length Converter</title>
+  </head>
+  <body class="flex flex-col h-screen bg-gray-100">
+    <!-- Navigation Bar -->
+    <div id="nav-container"></div>
+    <!-- Conversion Section -->
+    <main class="flex flex-col items-center justify-center flex-grow">
+      <div id="top" class="flex items-center gap-2 mb-4">
+        <input
+          type="number"
+          id="inputBox"
+          class="border border-gray-300 p-2 rounded-md"
+          placeholder="Enter value"
+          oninput="updateConversion()"
+        />
+        <p class="text-xl font-bold">=</p>
+        <input
+          type="number"
+          id="outputBox"
+          class="border border-gray-300 p-2 rounded-md bg-gray-200"
+          placeholder="Converted value"
+          disabled
+        />
+      </div>
+      <div id="bottom" class="flex items-center gap-4">
+        <select
+          id="fromUnit"
+          class="border border-gray-300 p-2 rounded-md"
+          onchange="updateConversion()"
+        >
+          <option value="miles">Miles</option>
+          <option value="km">Kilometers</option>
+        </select>
+        <select
+          id="toUnit"
+          class="border border-gray-300 p-2 rounded-md"
+          onchange="updateConversion()"
+        >
+          <option value="km">Kilometers</option>
+          <option value="miles">Miles</option>
+        </select>
+      </div>
+    </main>
+  </body>
+</html>
